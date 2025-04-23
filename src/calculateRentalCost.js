@@ -4,13 +4,17 @@
  * @return {number}
  */
 function calculateRentalCost(days) {
+  const RENTAL_DEFAULT = 40;
+  const RENTAL_DISCOUNT_7 = 50;
+  const RENTAL_DISCOUNT_3 = 20;
+
   switch (true) {
     case days >= 7:
-      return 40 * days - 50;
+      return RENTAL_DEFAULT * days - RENTAL_DISCOUNT_7;
     case days >= 3:
-      return 40 * days - 20;
+      return RENTAL_DEFAULT * days - RENTAL_DISCOUNT_3;
     default:
-      return 40 * days;
+      return RENTAL_DEFAULT * days;
   }
 }
 
